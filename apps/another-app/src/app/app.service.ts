@@ -5,6 +5,6 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
   async getData(): Promise<{ message: string }> {
     const message = await hello();
-    return { message };
+    return { message: `${message} on the other app` };
   }
 }

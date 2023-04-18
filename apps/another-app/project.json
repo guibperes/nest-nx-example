@@ -1,7 +1,7 @@
 {
-  "name": "nest-nx-hello",
+  "name": "another-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nest-nx-hello/src",
+  "sourceRoot": "apps/another-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,12 +11,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/nest-nx-hello",
-        "main": "apps/nest-nx-hello/src/main.ts",
-        "tsConfig": "apps/nest-nx-hello/tsconfig.app.json",
-        "assets": ["apps/nest-nx-hello/src/assets"],
+        "outputPath": "dist/apps/another-app",
+        "main": "apps/another-app/src/main.ts",
+        "tsConfig": "apps/another-app/tsconfig.app.json",
+        "assets": ["apps/another-app/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/nest-nx-hello/webpack.config.js"
+        "webpackConfig": "apps/another-app/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,14 +27,14 @@
       "executor": "@nrwl/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "nest-nx-hello:build"
+        "buildTarget": "another-app:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "nest-nx-hello:build:development"
+          "buildTarget": "another-app:build:development"
         },
         "production": {
-          "buildTarget": "nest-nx-hello:build:production"
+          "buildTarget": "another-app:build:production"
         }
       }
     },
@@ -42,14 +42,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nest-nx-hello/**/*.ts"]
+        "lintFilePatterns": ["apps/another-app/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/nest-nx-hello/jest.config.ts",
+        "jestConfig": "apps/another-app/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -60,7 +60,7 @@
       }
     },
     "docker-build": {
-      "command": "docker image build . -t another-app --build-arg APPLICATION_NAME=another-app"
+      "command": "docker image build . -t nest-nx-hello --build-arg APPLICATION_NAME=nest-nx-hello"
     }
   },
   "tags": []

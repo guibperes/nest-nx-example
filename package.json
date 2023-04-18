@@ -2,8 +2,15 @@
   "name": "nest-nx-hello",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
+  "scripts": {
+    "build": "nx run-many -t build",
+    "docker:build": "nx run-many -t docker-build",
+    "nest-nx-hello:build": "nx build nest-nx-hello",
+    "nest-nx-hello:serve": "nx serve nest-nx-hello",
+    "another-app:build": "nx build another-app",
+    "another-app:serve": "nx serve another-app"
+  },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
